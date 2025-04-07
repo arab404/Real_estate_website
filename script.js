@@ -71,3 +71,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Add to script.js
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-active');
+    menuToggle.classList.toggle('active');
+});
+
+// Close menu on click outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('nav-active');
+        menuToggle.classList.remove('active');
+    }
+});
+
+// Initialize blog posts
+const blogPosts = [
+    { image: 'blog1.jpg', title: 'Market Trends', excerpt: 'Latest trends in luxury real estate...' },
+    // Add more blog posts
+];
+
+// Initialize reviews
+const reviews = [
+    { rating: '★★★★★', text: 'Amazing experience!', author: 'John Doe' },
+    // Add more reviews
+];
